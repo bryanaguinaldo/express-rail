@@ -24,7 +24,6 @@ function User({ params }) {
                 </div>
             </main>
         );
-    console.log(data);
 
     return (
         <main className="min-h-screen min-w-screen backdrop-blur-xl bg-black/50 px-6">
