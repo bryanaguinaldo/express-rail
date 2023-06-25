@@ -104,7 +104,10 @@ function User({ params }) {
                     <div className="grid grid-cols-12 gap-2 mt-2">
                         {data.characters.map((ch) => {
                             return (
-                                <div className="col-span-3 w-full" key={ch.id}>
+                                <div
+                                    className="col-span-3 w-full flex flex-col items-center"
+                                    key={ch.id}
+                                >
                                     <div
                                         className={`w-full rounded-lg ${
                                             ch.rarity == 5
@@ -116,6 +119,14 @@ function User({ params }) {
                                             className="w-full"
                                             src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${ch.icon}`}
                                         />
+                                    </div>
+                                    <div className="flex flex-col items-center mt-2">
+                                        <span className="text-xs">
+                                            {"Lv." + ch.level}
+                                        </span>
+                                        <span className="text-xs">
+                                            {ch.name}
+                                        </span>
                                     </div>
                                 </div>
                             );
