@@ -43,7 +43,7 @@ export default function Home() {
                         </button>
                     </Link>
                 </div>
-                <div className="flex justify-center text-xs font-bold w-full inset-x-0 bottom-0 mb-4 absolute text-slate-300">
+                <div className="flex justify-center text-xs font-bold w-full inset-x-0 bottom-0 mb-4 absolute text-slate-300 text-center px-6">
                     <span>
                         All assets used for this application is property of
                         Mihoyo/Hoyoverse. No copyright infringement inteded.

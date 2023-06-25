@@ -3,8 +3,19 @@
 import axios from "axios";
 import useSWR from "swr";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = async (url) => {
+    const res = await fetch(url);
 
+    if (!res.ok) {
+        const error = new Error("An error occurred while fetching the data.");
+
+        error.info = await res.json();
+        error.status = res.status;
+        throw error;
+    }
+
+    return res.json();
+};
 function User({ params }) {
     const { data, error } = useSWR(`/api/uid/${params.userId}`, fetcher);
 
@@ -12,10 +23,11 @@ function User({ params }) {
         return (
             <main className="min-h-screen min-w-screen backdrop-blur-xl bg-black/50 px-4">
                 <div className="min-h-screen my-auto max-w-lg mx-auto flex flex-col justify-center items-center gap-4 hsr-screen">
-                    <span className="text-white">Failed to load</span>
+                    <span className="text-white">User does not exist.</span>
                 </div>
             </main>
         );
+
     if (!data)
         return (
             <main className="min-h-screen min-w-screen backdrop-blur-xl bg-black/50 px-4">
@@ -87,7 +99,7 @@ function User({ params }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center text-xs font-bold w-full inset-x-0 bottom-0 mb-4 absolute text-slate-300">
+                <div className="flex justify-center text-xs font-bold w-full inset-x-0 bottom-0 mb-4 absolute text-slate-300 text-center px-6">
                     <span>
                         All assets used for this application is property of
                         Mihoyo/Hoyoverse. No copyright infringement inteded.
