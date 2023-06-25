@@ -34,7 +34,7 @@ export default function Home() {
                             value={uid}
                         ></input>
                     </div>
-                    <Link href={`http://localhost:3000/u/${uid}`}>
+                    <Link href={`/u/${uid}`}>
                         <button
                             className="h-10 w-fit bg-black/20 border border-slate-400/70 rounded-full text-slate-300 px-8 font-bold"
                             onClick={handleSearch}
