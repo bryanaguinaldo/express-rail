@@ -21,6 +21,8 @@ module.exports = {
                 "police-blue": "#424f65",
                 "dark-vanilla": "#cdbba5",
                 olivine: "#A7B982",
+                "gi-five-star": "#C58C46",
+                "gi-four-star": "#967DB8",
             },
         },
         fontFamily: {

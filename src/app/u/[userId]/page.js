@@ -99,6 +99,29 @@ function User({ params }) {
                         </div>
                     </div>
                 </div>
+                <div className="w-full h-full bg-offwhite rounded-md mt-2 p-4">
+                    <span className="mb-4">Character showcase:</span>
+                    <div className="grid grid-cols-12 gap-2 mt-2">
+                        {data.characters.map((ch) => {
+                            return (
+                                <div className="col-span-3 w-full" key={ch.id}>
+                                    <div
+                                        className={`w-full rounded-lg ${
+                                            ch.rarity == 5
+                                                ? "bg-gi-five-star"
+                                                : "bg-gi-four-star"
+                                        }`}
+                                    >
+                                        <img
+                                            className="w-full"
+                                            src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${ch.icon}`}
+                                        />
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
                 <div className="flex justify-center text-xs font-bold w-full inset-x-0 bottom-0 mb-4 absolute text-slate-300 text-center px-6">
                     <span>
                         All assets used for this application is property of
