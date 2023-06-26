@@ -13,18 +13,22 @@ function PlayerCharacterInfo(props) {
 
     return (
         <div className="w-full h-full">
-            <div className="flex justify-center gap-2 p-4 bg-offwhite w-full cursor-pointer">
+            <div className="flex justify-center gap-2 p-4 w-full">
                 {data.characters.map((char, index) => {
                     return (
                         <button
-                            className="h-14 w-14 rounded-full bg-black"
+                            className={`h-12 w-20 rounded-lg ${
+                                char.rarity == 5
+                                    ? "bg-gi-five-star"
+                                    : "bg-gi-four-star"
+                            } cursor-pointer flex justify-end shadow-md`}
                             key={char.id}
                             data-id={char.id}
                             data-index={index}
                             onClick={handleCharacterSelect}
                         >
                             <img
-                                className="h-full w-full rounded-full"
+                                className="h-full rounded-lg"
                                 src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${char.icon}`}
                             />
                         </button>
@@ -44,19 +48,22 @@ function PlayerCharacterInfo(props) {
                     <div className="col-span-2">
                         <div className="w-full h-full p-2">
                             <ul className="space-y-2 flex flex-col items-center">
-                                <li
-                                    className={`w-full flex justify-center rounded-lg ${
-                                        data.characters[scIndex].light_cone
-                                            .rarity == 5
-                                            ? "bg-gi-five-star/30"
-                                            : "bg-gi-four-star/30"
-                                    }`}
-                                >
-                                    <img
-                                        className="w-2/3 m-2"
-                                        src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${data.characters[scIndex].light_cone.icon}`}
-                                    />
-                                </li>
+                                {data.characters[scIndex].light_cone ? (
+                                    <li
+                                        className={`w-full flex justify-center rounded-lg ${
+                                            data.characters[scIndex].light_cone
+                                                .rarity == 5
+                                                ? "bg-gi-five-star/30"
+                                                : "bg-gi-four-star/30"
+                                        }`}
+                                    >
+                                        <img
+                                            className="w-2/3 m-2"
+                                            src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${data.characters[scIndex].light_cone.icon}`}
+                                        />
+                                    </li>
+                                ) : null}
+
                                 {data.characters[scIndex].relics.map(
                                     (relic, index) => {
                                         return (
