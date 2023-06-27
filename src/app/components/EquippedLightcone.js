@@ -8,10 +8,10 @@ function EquippedLightcone(props) {
             {light_cone ? (
                 <>
                     <img
-                        className="h-12"
+                        className="h-10"
                         src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${light_cone.icon}`}
                     />
-                    <div className="text-white text-sm">
+                    <div className="text-white text-xs">
                         <div>
                             <span>{light_cone.name}</span>
                         </div>

@@ -9,7 +9,6 @@ function PlayerCharacterInfo(props) {
 
     function handleCharacterSelect(e) {
         setScIndex(e.currentTarget.getAttribute("data-index"));
-        console.log(scIndex);
     }
 
     return (
