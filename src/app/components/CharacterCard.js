@@ -6,7 +6,7 @@ import EquippedRelic from "./EquippedRelic";
 function CharacterCard(props) {
     const character = props.character;
     return (
-        <div className="w-full h-full character-card">
+        <div className="w-full h-full character-card" id="character-card">
             <div className="w-full h-full grid grid-cols-12 gap-4">
                 <div className="h-full col-span-12 sm:col-span-6 lg:col-span-4 overflow-hidden p-4 flex flex-col">
                     <div className="flex flex-col justify-between relative z-10">

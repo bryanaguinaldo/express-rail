@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import CharacterCard from "./CharacterCard";
+import html2canvas from "html2canvas";
 
 function PlayerCharacterInfo(props) {
     const data = props.data;
@@ -9,6 +10,19 @@ function PlayerCharacterInfo(props) {
 
     function handleCharacterSelect(e) {
         setScIndex(e.currentTarget.getAttribute("data-index"));
+    }
+
+    function handleExports() {
+        const element = document.getElementById("player-card-info");
+        html2canvas(element, {
+            useCORS: true,
+            logging: false,
+        }).then((canvas) => {
+            var link = document.createElement("a");
+            link.download = "express-rail-card.png";
+            link.href = canvas.toDataURL();
+            link.click();
+        });
     }
 
     return (
@@ -35,7 +49,19 @@ function PlayerCharacterInfo(props) {
                     );
                 })}
             </div>
-            <CharacterCard character={data.characters[scIndex]} />
+            <div id="player-card-info">
+                <CharacterCard character={data.characters[scIndex]} />
+            </div>
+            <button
+                type="button"
+                className="h-10 mt-4 w-fit bg-black/20 border border-slate-400/70 rounded-full text-slate-300 px-8 font-bold"
+                onClick={handleExports}
+            >
+                Export Card
+            </button>
+            <p className="text-gray-500 text-xs mt-2">
+                Saving is a bit weird but it works... I guess.
+            </p>
         </div>
     );
 }
