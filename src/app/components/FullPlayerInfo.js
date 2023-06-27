@@ -20,33 +20,46 @@ function FullPlayerInfo(props) {
                         <span>{data.player.signature}</span>
                     </div>
                 </div>
-                <Info type="Trailblazer Level" value={data.player.level} />
-                <Info
-                    type="Equilibrium Level"
-                    value={data.player.world_level}
-                />
-                <Info
-                    type="Achievements Unlocked"
-                    value={data.player.space_info.achievement_count}
-                />
-                <Info
-                    type="Characters Owned"
-                    value={data.player.space_info.avatar_count}
-                />
-                <Info
-                    type="Forgotten Hall"
-                    value={
-                        "Lv. " +
-                        data.player.space_info.challenge_data.maze_group_index
-                    }
-                />
-                <Info
-                    type="Memory of Chaos"
-                    value={
-                        "Lv. " +
-                        data.player.space_info.challenge_data.maze_group_id
-                    }
-                />
+                <div className="grid grid-cols-12 gap-4">
+                    <div className="col-span-12 lg:col-span-4 space-y-2">
+                        <Info
+                            type="Trailblazer Level"
+                            value={data.player.level}
+                        />
+                        <Info
+                            type="Equilibrium Level"
+                            value={data.player.world_level}
+                        />
+                    </div>
+                    <div className="col-span-12 lg:col-span-4 space-y-2">
+                        <Info
+                            type="Achievements Unlocked"
+                            value={data.player.space_info.achievement_count}
+                        />
+                        <Info
+                            type="Characters Owned"
+                            value={data.player.space_info.avatar_count}
+                        />
+                    </div>
+                    <div className="col-span-12 lg:col-span-4 space-y-2">
+                        <Info
+                            type="Forgotten Hall"
+                            value={
+                                "Lv. " +
+                                data.player.space_info.challenge_data
+                                    .maze_group_index
+                            }
+                        />
+                        <Info
+                            type="Memory of Chaos"
+                            value={
+                                "Lv. " +
+                                data.player.space_info.challenge_data
+                                    .maze_group_id
+                            }
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -30,19 +30,15 @@ function User({ params }) {
                     <SearchUID />
                 </div>
             ) : null}
-            <div className="my-auto py-8 max-w-5xl mx-auto flex flex-col items-center gap-4">
+            <div className="my-auto py-8 max-w-7xl mx-auto flex flex-col items-center gap-4">
                 {error ? (
                     <NotFound />
                 ) : !data ? (
                     <span className="text-white">Loading...</span>
                 ) : (
-                    <div className="grid grid-cols-12 w-full h-full gap-4 max-w-lg lg:max-w-full pb-24">
-                        <div className="col-span-12 lg:col-span-5">
-                            <FullPlayerInfo data={data} />
-                        </div>
-                        <div className="col-span-12 lg:col-span-7">
-                            <PlayerCharacterInfo data={data} />
-                        </div>
+                    <div className="w-full h-full gap-4 lg:max-w-full pb-24">
+                        <FullPlayerInfo data={data} />
+                        <PlayerCharacterInfo data={data} />
                     </div>
                 )}
                 <div className="flex justify-center text-xs font-bold w-full bottom-0 mb-4 fixed text-slate-300 text-center px-6">
