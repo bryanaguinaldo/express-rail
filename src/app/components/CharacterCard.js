@@ -70,8 +70,8 @@ function CharacterCard(props) {
                     </ul>
                 </div>
                 <div className="flex flex-col items-center justify-center h-full col-span-12 lg:col-span-4 overflow-hidden p-4 space-y-2">
-                    {character.relics.map((relic) => {
-                        return <EquippedRelic data={relic} />;
+                    {character.relics.map((relic, index) => {
+                        return <EquippedRelic key={index} data={relic} />;
                     })}
                 </div>
             </div>
