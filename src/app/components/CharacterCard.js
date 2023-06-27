@@ -55,7 +55,7 @@ function CharacterCard(props) {
                         })}
                     </ul>
                 </div>
-                <div className="flex flex-col justify-center h-full col-span-12 sm:col-span-6 lg:col-span-5 overflow-hidden p-4 space-y-2">
+                <div className="flex flex-col justify-center h-full col-span-12 lg:col-span-5 overflow-hidden p-4 space-y-2">
                     <EquippedLightcone light_cone={character.light_cone} />
                 </div>
             </div>
