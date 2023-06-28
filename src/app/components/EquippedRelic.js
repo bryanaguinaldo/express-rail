@@ -28,9 +28,9 @@ function EquippedRelic(props) {
                     </div>
                     <div className="w-full h-full">
                         <span className="text-xs">
-                            {relic.sub_affix.map((substat) => {
+                            {relic.sub_affix.map((substat, index) => {
                                 return (
-                                    <ul>
+                                    <ul key={index}>
                                         <li className="text-xs">
                                             {substat.name +
                                                 "+" +
