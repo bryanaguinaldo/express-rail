@@ -31,7 +31,7 @@ function PlayerCharacterInfo(props) {
                 {data.characters.map((char, index) => {
                     return (
                         <button
-                            className={`h-12 w-20 rounded-lg ${
+                            className={`h-16 w-16 shadow-lg shadow-inner shadow-black mx-1 border border-dashed border-white/50 rounded-full overflow-hidden ${
                                 char.rarity == 5
                                     ? "bg-gi-five-star"
                                     : "bg-gi-four-star"

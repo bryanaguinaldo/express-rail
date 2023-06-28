@@ -30,7 +30,7 @@ function User({ params }) {
                     <SearchUID />
                 </div>
             ) : null}
-            <div className="my-auto py-8 max-w-7xl mx-auto flex flex-col items-center gap-4">
+            <div className="my-auto py-8 max-w-[1536px] mx-auto flex flex-col items-center gap-4">
                 {error ? (
                     <NotFound />
                 ) : !data ? (
