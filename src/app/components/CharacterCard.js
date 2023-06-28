@@ -2,6 +2,7 @@ import React from "react";
 import StatInfo from "./StatInfo";
 import EquippedLightcone from "./EquippedLightcone";
 import EquippedRelic from "./EquippedRelic";
+import Image from "next/image";
 
 function CharacterCard(props) {
     const character = props.character;
@@ -38,9 +39,13 @@ function CharacterCard(props) {
                             })}
                         </ul>
                     </div>
-                    <img
+                    <Image
                         className="object-cover object-center scale-[180%]"
                         src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${character.portrait}`}
+                        height={800}
+                        width={800}
+                        priority
+                        alt={`Portrait of ${character.name}`}
                     />
                 </div>
                 <div className="flex flex-col justify-center h-full col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-3 overflow-hidden p-4">
