@@ -39,12 +39,12 @@ function CharacterCard(props) {
                             })}
                         </ul>
                     </div>
-                    <img
+                    <Image
                         className="object-cover object-center scale-[180%]"
                         src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${character.portrait}`}
-                        // height={800}
-                        // width={800}
-                        // priority
+                        height={800}
+                        width={800}
+                        priority
                         alt={`Portrait of ${character.name}`}
                     />
                 </div>
