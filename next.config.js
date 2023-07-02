@@ -5,7 +5,7 @@ const nextConfig = {
             {
                 source: "/api/uid/:uid",
                 destination:
-                    "https://rails-express.vercel.app/sr_info_parsed/:uid?version=v2&lang=en",
+                    "https://www.rails-express.com/sr_info_parsed/:uid?version=v2&lang=en",
             },
         ];
     },
@@ -24,18 +24,6 @@ const nextConfig = {
 return (module.exports = nextConfig);
 
 // module.exports = () => {
-//     const images = () => {
-//         return [
-//             {
-//                 protocol: "https",
-//                 hostname:
-//                     "raw.githubusercontent.com/Mar-7th/StarRailRes/master/",
-//                 port: "",
-//                 pathname: "/ui/assets/**",
-//             },
-//         ];
-//     };
-
 //     const rewrites = () => {
 //         return [
 //             {
@@ -44,10 +32,8 @@ return (module.exports = nextConfig);
 //                     "https://rails-express.vercel.app/sr_info_parsed/:uid?version=v2&lang=en",
 //             },
 //         ];
-//         zz;
 //     };
 //     return {
 //         rewrites,
-//         images,
 //     };
 // };
