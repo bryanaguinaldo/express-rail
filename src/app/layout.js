@@ -1,3 +1,4 @@
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
 export const metadata = {
@@ -7,7 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body suppressHydrationWarning={true}>{children}</body>
+            <body suppressHydrationWarning={true}>
+                <GoogleAnalytics />
+                {children}
+            </body>
         </html>
     );
 }
